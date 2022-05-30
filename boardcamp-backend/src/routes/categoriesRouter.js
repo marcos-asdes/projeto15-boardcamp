@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { validateSchema } from '../middlewares/validationMiddleware.js';
+import { validationSchema } from '../middlewares/validationMiddleware.js';
 import { categorySchema } from '../schemas/categorySchema.js';
 import { getCategories, sendCategory } from '../controllers/categoriesControllers.js';
 
@@ -11,7 +11,7 @@ categoriesRouter.get('/categories', getCategories);
 categoriesRouter.post(
     '/categories',
     (req, res, next) => {
-        validateSchema(req, res, next, categorySchema);
+        validationSchema(req, res, next, categorySchema);
     },
     sendCategory
 );

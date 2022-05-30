@@ -1,4 +1,4 @@
-export function validateSchema(req, res, next, schema){
+export function validationSchema(req, res, next, schema){
     const body = req.body;
 
     const validate = schema.validate(body, {abortEarly: false});
